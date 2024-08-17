@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Button, Box, Typography } from '@mui/material';
+import ProfileImg from '../assets/profile.PNG'; // Importe a imagem de perfil
 
 const Banner = () => {
   return (
@@ -8,11 +9,21 @@ const Banner = () => {
       <Container sx={{ position: 'relative', zIndex: 10 }}>
         <Grid container spacing={4} alignItems="center" justifyContent="center" textAlign="center">
           <Grid item md={6}>
-            <Box className="shadow-lg rounded" sx={{ borderRadius: '25px', backgroundColor: '#007337', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Typography variant="h5" color="white">
-                Imagem Substituída
-              </Typography>
-            </Box>
+            <Box
+              component="img"
+              src={ProfileImg}
+              alt="Profile"
+              className="shadow-lg rounded"
+              sx={{
+                borderRadius: '25px',
+                backgroundColor: '#007337',
+                height: '300px',
+                width: '300px',
+                objectFit: 'cover',
+                display: 'block',
+                mx: 'auto',
+              }}
+            />
           </Grid>
           <Grid item md={6}>
             <Typography variant="h2" fontWeight="bold" gutterBottom>
