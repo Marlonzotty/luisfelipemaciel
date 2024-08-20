@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Card, CardMedia, CardContent } from '@mui/material';
+import { Container, Grid, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa o Bootstrap
 
 // Importe as imagens aqui
 import Imagem2015 from '../assets/2015.PNG';
@@ -9,7 +10,14 @@ import Imagem2018 from '../assets/2018.2.JPG';
 import Imagem2019 from '../assets/2019.PNG';
 import Imagem2020 from '../assets/2020.JPG';
 import Imagem2021 from '../assets/2021.JPG';
-import Imagem2022 from '../assets/2022.2.PNG';
+import Imagem2022 from '../assets/fred.PNG';
+import ImagemBolsonaro2022 from '../assets/LcomBolsonaro.PNG'; // Nova imagem
+import ImagemZema2022 from '../assets/zema.PNG'; // Nova imagem
+import ImagemCampanha2022 from '../assets/camp.PNG'; // Nova imagem
+import ImagemCarteirinha2023 from '../assets/carteirinha.PNG'; // Nova imagem
+import ImagemGestao2023 from '../assets/ge.JPG'; // Nova imagem
+import ImagemRodeio2023 from '../assets/rodeio.PNG'; // Nova imagem
+import ImagemDemocracia2024 from '../assets/democra.PNG'; // Nova imagem
 
 const SobreLuisFelipe = () => {
   const trajetoria = [
@@ -53,32 +61,99 @@ const SobreLuisFelipe = () => {
       texto: 'Comecei a trabalhar como Assessor Parlamentar do Deputado Dr. Frederico na Câmara dos Deputados. Neste ano, tive a honra de conhecer pessoalmente o Presidente Jair Bolsonaro e, junto com Dr. Frederico e o Governador Zema, trouxe milhões em recursos para São João del-Rei, incluindo armamentos e viaturas para nossas forças policiais.',
       imagem: Imagem2022,
     },
+    {
+      ano: '2022',
+      texto: 'Conheci pessoalmente o Presidente Jair Bolsonaro.',
+      imagem: ImagemBolsonaro2022,
+    },
+    {
+      ano: '2022',
+      texto: 'Junto de Dr. Frederico e Zema trouxemos milhões de reais em recursos para São João del-Rei.',
+      imagem: ImagemZema2022,
+    },
+    {
+      ano: '2022',
+      texto: 'Fizemos a maior campanha Presidencial na história de SJDR para Jair Bolsonaro.',
+      imagem: ImagemCampanha2022,
+    },
+    {
+      ano: '2023',
+      texto: 'Tirei a minha carteirinha da OAB e passei a exercer com muita honra e dedicação a advocacia, ajudando vários cidadãos a terem seus direitos respeitados.',
+      imagem: ImagemCarteirinha2023,
+    },
+    {
+      ano: '2023',
+      texto: 'Formei em Gestão Pública - 2023.',
+      imagem: ImagemGestao2023,
+    },
+    {
+      ano: '2023',
+      texto: 'Criei o movimento em prol do retorno dos rodeios de forma segura em SJDR.',
+      imagem: ImagemRodeio2023,
+    },
+    {
+      ano: '2024',
+      texto: 'Fomos pessoalmente na Avenida Paulista em ato pela defesa da Democracia contra os avanços inconstitucionais do STF.',
+      imagem: ImagemDemocracia2024,
+    },
   ];
 
   return (
-    <section id="quem-sou" className="py-20 bg-gray-100 text-center">
+    <section 
+      id="quem-sou" 
+      className="py-20 text-center"
+      style={{ backgroundColor: '#00371a' }} // Background da paleta de cores
+    >
       <Container>
-        <Typography variant="h2" gutterBottom className="text-darkGreen">
-          Quem Sou
+        <Typography 
+          variant="h2" 
+          className="mb-10 font-bold text-3xl md:text-5xl"
+          style={{ color: '#e5c401' }} // Cor das palavras para contraste
+        >
+          Conheça minha trajetória
         </Typography>
-        <Typography variant="body1" color="textSecondary" paragraph>
+        <Typography 
+          variant="body1" 
+          className="mb-12 mx-auto max-w-3xl"
+          style={{ color: '#e5c401' }} // Cor das palavras para contraste
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
         </Typography>
-        <Grid container spacing={4}>
+        <Grid 
+          container 
+          spacing={4} 
+          justifyContent="center" // Centraliza os itens no eixo horizontal
+        >
           {trajetoria.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card>
+              <Card 
+                className="shadow p-3 mb-5 rounded transition-shadow duration-300"
+                style={{ 
+                  backgroundColor: '#e5c401', // Cor dos modais
+                  border: '1px solid #e0e0e0',
+                  transition: 'background-color 0.3s ease' // Transição suave
+                }}
+              >
                 <CardMedia
                   component="img"
                   height="200"
                   image={item.imagem}
                   alt={`Imagem de ${item.ano}`}
+                  className="object-cover"
                 />
-                <CardContent>
-                  <Typography variant="h5" component="div" gutterBottom>
+                <CardContent className="p-6">
+                  <Typography 
+                    variant="h5" 
+                    component="div" 
+                    className="font-semibold text-xl mb-2"
+                    style={{ color: '#00371a' }} // Contraste dentro dos modais
+                  >
                     {item.ano}
                   </Typography>
-                  <Typography variant="body2" color="textSecondary">
+                  <Typography 
+                    variant="body2" 
+                    style={{ color: '#00371a' }} // Contraste dentro dos modais
+                  >
                     {item.texto}
                   </Typography>
                 </CardContent>

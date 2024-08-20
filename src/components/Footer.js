@@ -4,11 +4,11 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <Box className="bg-darkGreen text-white py-10">
+    <Box sx={{ backgroundColor: '#004225', color: 'white', py: 3 }}> {/* Usei a cor da paleta para o fundo */}
       <Container>
         <Grid container spacing={2} justifyContent="center">
           <Grid item>
-            <Link href="https://facebook.com" aria-label="Facebook" color="inherit" sx={{ mx: 2 }}>
+            <Link href="https://www.facebook.com/lfmaciel1" aria-label="Facebook" color="inherit" sx={{ mx: 2 }}>
               <FaFacebookF />
             </Link>
           </Grid>
@@ -18,7 +18,7 @@ const Footer = () => {
             </Link>
           </Grid>
           <Grid item>
-            <Link href="https://instagram.com" aria-label="Instagram" color="inherit" sx={{ mx: 2 }}>
+            <Link href="https://www.instagram.com/luisfelipemacielmg/" aria-label="Instagram" color="inherit" sx={{ mx: 2 }}>
               <FaInstagram />
             </Link>
           </Grid>
